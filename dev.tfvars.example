@@ -1,0 +1,35 @@
+# Project Configuration
+project_id = "your-gcp-project-id-here"  # Replace with your GCP project ID
+region     = "us-central1"
+zone       = "us-central1-a"
+
+# Compute Module (optional - leave empty to skip VM instances)
+instance_names = []
+disk_size      = {}
+
+# Network Configuration
+network_name  = "gke-network"
+subnet_name   = "gke-subnet"
+subnet_cidr   = "10.0.0.0/24"
+pods_cidr     = "10.1.0.0/16"
+services_cidr = "10.2.0.0/20"
+
+# Service Account Configuration
+service_account_name = "gke-node-sa"
+
+# GKE Configuration
+enable_gke            = true
+cluster_name          = "dev-gke-cluster"
+# Pilih salah satu: zone untuk single-zone cluster, atau region untuk regional cluster
+gke_location_zone     = "us-central1-a"  # Zone: us-central1-a, us-central1-b, us-central1-c (untuk single-zone cluster)
+# gke_location_region = "us-central1"    # Region: us-central1, us-east1, dll (untuk regional cluster)
+gke_node_machine_type = "e2-standard-2"         # Machine type: e2-medium, e2-standard-4, n1-standard-2, dll
+gke_node_disk_size    = 20                  # Disk size dalam GB (100 GB default)
+gke_node_disk_type    = "pd-balanced"       # Disk type: pd-standard, pd-balanced, pd-ssd
+gke_node_image_type   = "cos_containerd"               # OS: cos_containerd, UBUNTU, ubuntu_containerd (Ubuntu 22.04 LTS)
+gke_node_count        = 1                   # Initial number of nodes
+gke_min_nodes         = 1                   # Minimum nodes untuk autoscaling
+gke_max_nodes         = 3                   # Maximum nodes untuk autoscaling
+gke_release_channel   = "REGULAR"           # Release channel: RAPID, REGULAR, STABLE
+gke_deletion_protection = false             # Set false untuk allow cluster deletion, true untuk production
+

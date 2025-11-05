@@ -1,0 +1,32 @@
+# Local .tfvars files (sensitive)
+*.tfvars
+*.tfvars.json
+
+# Exclude all .tfvars files, except example
+!*.tfvars.example
+
+# State files (very sensitive)
+*.tfstate
+*.tfstate.*
+.terraform.tfstate.lock.info
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Ignore override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Include tfplan files to ignore the plan output
+*tfplan*
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# Terraform cache
+.terraform/
+
